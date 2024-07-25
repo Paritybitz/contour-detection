@@ -89,7 +89,14 @@ def contours_of_image(img):
     print(type(edges_dilated))
     circles=detect_circle(edges_dilated)
     draw_circles(img,circles)
+    print(circles)
+    x=circles[0][0]
+    y=circles[0][1]
+    r=circles[0][2]
+    cropped_image = crop_circle(img, x, y, r)
 
+    # Save or display the cropped image
+    cv2.imwrite('cropped_circle_image35.jpg', cropped_image)
 
     # # Apply Hough Circle Transform on the dilated edges
     # circles = cv2.HoughCircles(
@@ -117,9 +124,41 @@ def contours_of_image(img):
     # cv2.waitKey(0)
     # cv2.destroyAllWindows()
 
+def crop_circle(image, x, y, r):
+    # Load the image
+    # image = cv2.imread(image_path)
+    
+    # Check if image was successfully loaded
+    if image is None:
+        raise ValueError(f"Image at path could not be loaded.")
+    
+    # Create a mask with a white circle
+    mask = np.zeros_like(image)
+    cv2.circle(mask, (x, y), r, (255, 255, 255), -1)
+    
+    # Apply the mask to the image
+    result = cv2.bitwise_and(image, mask)
+    
+    # Crop the bounding box around the circle
+    top_left_x = max(0, x - r)
+    top_left_y = max(0, y - r)
+    bottom_right_x = min(image.shape[1], x + r)
+    bottom_right_y = min(image.shape[0], y + r)
+    
+    cropped_image = result[top_left_y:bottom_right_y, top_left_x:bottom_right_x]
+    
+    return cropped_image
+
+
+# # Example usage:
+# image_path = 'C:/Users/alimo/OneDrive/Documents/FRT/Contour Detection (Basketball)/contour-detection/Ballogy False Positive Images/ball_test35.png'
+# x, y, r = 100, 100, 50
+
+
+
 
 # Load an example image
-img = cv2.imread('C:/Users/alimo/OneDrive/Documents/FRT/Contour Detection (Basketball)/contour-detection/Ballogy False Positive Images/ball_test20q.png')
+img = cv2.imread('C:/Users/alimo/OneDrive/Documents/FRT/Contour Detection (Basketball)/contour-detection/Ballogy False Positive Images/ball_test35.png')
 
 # Check if the image was loaded successfully
 if img is not None:
