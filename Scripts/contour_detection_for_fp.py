@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import os
 
 def detect_circle(image):
     # Step 1: Read the image
@@ -155,13 +156,59 @@ def crop_circle(image, x, y, r):
 # x, y, r = 100, 100, 50
 
 
+def percentage_of_white_pixels(image_path):
+    # Load the image
+    image = cv2.imread(image_path)
+    
+    # Check if image was successfully loaded
+    if image is None:
+        raise ValueError(f"Image at path '{image_path}' could not be loaded.")
+    
+    # Convert the image to grayscale (if it's not already)
+    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    
+    # Create a binary image where white pixels are separated from others
+    _, binary_image = cv2.threshold(gray_image, 240, 255, cv2.THRESH_BINARY)
+    
+    # Count the number of white pixels
+    white_pixels = np.sum(binary_image == 255)
+    
+    # Count the total number of pixels
+    total_pixels = binary_image.size
+    
+    # Calculate the percentage of white pixels
+    white_percentage = (white_pixels / total_pixels) * 100
+    
+    return white_percentage
+
+def process_images_in_folder(folder_path, output_file):
+    with open(output_file, 'w') as file:
+        for filename in os.listdir(folder_path):
+            if filename.endswith(('.png', '.jpg', '.jpeg')):
+                image_path = os.path.join(folder_path, filename)
+                try:
+                    percentage = percentage_of_white_pixels(image_path)
+                    file.write(f"{filename}: {percentage:.2f}%\n")
+                    print(f"{filename}: {percentage:.2f}%")
+                except ValueError as e:
+                    print(e)
+
+# Folder containing the images
+folder_path = 'C:/Users/alimo/Documents/FRT/Contour Detection (Basketball)/contour-detection/circles'
+
+# Output file to save the results
+output_file = 'C:/Users/alimo/Documents/FRT/Contour Detection (Basketball)/contour-detection/white_pixels_percentage.txt'
+
+# Process all images in the specified folder and write the results to the output file
+process_images_in_folder(folder_path, output_file)
+
 
 
 # Load an example image
-img = cv2.imread('C:/Users/alimo/OneDrive/Documents/FRT/Contour Detection (Basketball)/contour-detection/Ballogy False Positive Images/ball_test35.png')
+# img = cv2.imread('C:/Users/alimo/OneDrive/Documents/FRT/Contour Detection (Basketball)/contour-detection/Ballogy False Positive Images/ball_test35.png')
 
-# Check if the image was loaded successfully
-if img is not None:
-    contours_of_image(img)
-else:
-    print("Error loading image.")
+# # Check if the image was loaded successfully
+# if img is not None:
+#     contours_of_image(img)
+# else:
+#     print("Error loading image.")

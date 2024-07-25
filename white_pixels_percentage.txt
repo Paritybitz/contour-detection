@@ -1,0 +1,16 @@
+cropped_circle_image14.jpg: 0.00%
+cropped_circle_image15.jpg: 0.00%
+cropped_circle_image19.jpg: 0.00%
+cropped_circle_image20.jpg: 0.00%
+cropped_circle_image21.jpg: 0.00%
+cropped_circle_image22.jpg: 0.00%
+cropped_circle_image24.jpg: 0.00%
+cropped_circle_image25.jpg: 0.00%
+cropped_circle_image26.jpg: 0.00%
+cropped_circle_image27.jpg: 0.00%
+cropped_circle_image29.jpg: 0.00%
+cropped_circle_image30.jpg: 0.00%
+cropped_circle_image31.jpg: 0.00%
+cropped_circle_image32.jpg: 0.00%
+cropped_circle_image33.jpg: 0.00%
+cropped_circle_image35.jpg: 0.00%
