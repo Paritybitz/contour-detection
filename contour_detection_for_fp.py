@@ -119,7 +119,7 @@ def contours_of_image(img):
 
 
 # Load an example image
-img = cv2.imread('C:/Users/alimo/OneDrive/Documents/FRT/Contour Detection (Basketball)/contour-detection/Ballogy False Positive Images/ball_test35.png')
+img = cv2.imread('C:/Users/alimo/OneDrive/Documents/FRT/Contour Detection (Basketball)/contour-detection/Ballogy False Positive Images/ball_test20q.png')
 
 # Check if the image was loaded successfully
 if img is not None:
