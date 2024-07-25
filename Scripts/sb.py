@@ -14,9 +14,10 @@ def percentage_of_white_pixels(image_path):
     
     # Create a binary image where white pixels are separated from others
     _, binary_image = cv2.threshold(gray_image, 240, 255, cv2.THRESH_BINARY)
-    
+    print(type(binary_image))
+    # cv2.imshow(binary_image)
     # Count the number of white pixels
-    white_pixels = np.sum(binary_image == 255)
+    white_pixels = np.sum(binary_image >200)
     
     # Count the total number of pixels
     total_pixels = binary_image.size
@@ -27,6 +28,6 @@ def percentage_of_white_pixels(image_path):
     return white_percentage
 
 # Example usage:
-image_path = 'C:/Users/alimo/Documents/FRT/Contour Detection (Basketball)/test_circle.png'
+image_path = 'C:/Users/alimo/Documents/FRT/Contour Detection (Basketball)/contour-detection/spiral_test.png'
 percentage = percentage_of_white_pixels(image_path)
 print(f"Percentage of white pixels in the image: {percentage:.2f}%")
