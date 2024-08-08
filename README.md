@@ -1,17 +1,15 @@
 # Contour Detection
 
 <p align="center">
-  <img src="![image](https://github.com/user-attachments/assets/0671c3a6-8c6d-4681-a2c4-ffb4fcc3afe7)
-" alt="Image 1" width="25%" />
-  <img src="![image](https://github.com/user-attachments/assets/02520882-7f39-4064-8fb3-fa932d5cbbaa)
-" alt="Image 2" width="25%" />
+  <img src="https://github.com/user-attachments/assets/469738f0-b328-4885-8369-479499fa820f" alt="Image 1" width="26.5%" />
+  <img src="https://github.com/user-attachments/assets/12376bc3-1b93-4122-ad3f-da1ac54dda95" alt="Image 2" width="30%" />
 </p>
 
 *The image on the left is input (the bounding box), the image on the right is the output (contour ball detection)*
 
 <br>
 
-This project involves various image processing tasks such as detecting circles, and contours, and calculating the percentage of white pixels in images using OpenCV. The main functionalities include detecting circles in an image, drawing contours, cropping detected circles, and processing images in a folder to calculate the percentage of white pixels. ***THE ISSUE:*** all these images were detected as false positives in the model my team and I were training.
+This project involves detecting circles (using hough_circle), and contours, and calculating the percentage of white pixels in images using OpenCV. The main functionalities include detecting circles in an image, drawing contours, cropping detected circles, and processing images in a folder to calculate the percentage of white pixels. ***THE ISSUE:*** all these images were detected as false positives in the model my team and I were training.
 
 ## Features
 
