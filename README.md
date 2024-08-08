@@ -1,16 +1,17 @@
 # Contour Detection
 
 <p align="center">
-  <img src="![image](https://github.com/user-attachments/assets/da5011fa-0575-47e1-87cb-b01a37788629)
-" alt="Image 1" width="30%" />
-  <img src="![image](https://github.com/user-attachments/assets/ff337b94-b774-4a65-9f34-10f2fa8c674d)
-
+  <img src="![image](https://github.com/user-attachments/assets/0671c3a6-8c6d-4681-a2c4-ffb4fcc3afe7)
+" alt="Image 1" width="25%" />
+  <img src="![image](https://github.com/user-attachments/assets/02520882-7f39-4064-8fb3-fa932d5cbbaa)
+" alt="Image 2" width="25%" />
 </p>
-<!-- INSERT THIS ABOVE OVER THE </p>
-  " alt="Image 2" width="30%" />
-  <img src="path/to/your/image3.png" alt="Image 3" width="30%" />
--->
-This project involves various image processing tasks such as detecting circles, contours, and calculating the percentage of white pixels in images using OpenCV. The main functionalities include detecting circles in an image, drawing contours, cropping detected circles, and processing images in a folder to calculate the percentage of white pixels.
+
+*The image on the left is input (the bounding box), the image on the right is the output (contour ball detection)*
+
+<br>
+
+This project involves various image processing tasks such as detecting circles, and contours, and calculating the percentage of white pixels in images using OpenCV. The main functionalities include detecting circles in an image, drawing contours, cropping detected circles, and processing images in a folder to calculate the percentage of white pixels. ***THE ISSUE:*** all these images were detected as false positives in the model my team and I were training.
 
 ## Features
 
@@ -22,8 +23,8 @@ This project involves various image processing tasks such as detecting circles, 
 
 ## Prerequisites
 
-- Python 3.x
-- OpenCV
+- Python 3.11.4
+- OpenCV (cv2)
 - NumPy
 - OS
 
