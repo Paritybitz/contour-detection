@@ -9,7 +9,11 @@
 
 <br>
 
-This project involves detecting circles (using hough_circle), and contours, and calculating the percentage of white pixels in images using OpenCV. The main functionalities include detecting circles in an image, drawing contours, cropping detected circles, and processing images in a folder to calculate the percentage of white pixels. ***THE ISSUE:*** all these images were detected as false positives in the model my team and I were training.
+This project involves detecting circles (using hough_circle), and contours, and calculating the percentage of white pixels in images using OpenCV. The main functionalities include detecting circles in an image, drawing contours, cropping detected circles, and processing images in a folder to calculate the percentage of white pixels. 
+
+<br />
+
+***THE ISSUE:*** All these images were detected as false positives in the model my team and I were training.
 
 ## Features
 
